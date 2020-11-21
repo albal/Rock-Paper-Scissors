@@ -127,6 +127,9 @@ class Game:
             if self.user_choice == '!help':
                 print(self.help)
                 continue
+            if self.user_choice not in self.RPS.keys():
+                print("Invalid input")
+                continue    
             self.game_choice = random.choice(list(self.RPS.keys()))
             self.result = self.referee()
             self.result_processing()
